@@ -1,15 +1,8 @@
-version: "3"
+version: "3.8"
 services:
-  app-smth:
-    build: ./docker-pract
-    container_name: app-smth
-  app-other:
-    build: ./anotherproj
-    container_name: app-other
   nginx:
-    build: ./nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"
-    depends_on:
-      - app-smth
-      - aoo-other
